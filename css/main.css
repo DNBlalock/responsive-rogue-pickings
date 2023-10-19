@@ -205,11 +205,11 @@ footer span {
 	}
 
 	.section-one {
-		flex-basis: 26%;
+		width: 26%;
 	}
 
 	.section-two {
-		flex-basis: 40%;
+		width: 40%;
 		padding: 0 30px;
 		border-left: 5px solid #EEE;
 		border-right: 5px solid #EEE;
@@ -224,7 +224,7 @@ footer span {
 	}
 
 	.section-three {
-		flex-basis: 26%;
+		width: 26%;
 	}
 
 }
