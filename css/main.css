@@ -91,7 +91,7 @@ header nav ul {
 
 header nav ul li {
 	/*display: inline-block;*/
-	font-size: 14px;
+	/*font-size: 14px;*/
 	font-size: 0.875rem;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -128,6 +128,7 @@ header nav ul li a {
 }
 
 .bottom-section .content-wrapper {
+	/*border-top: 5px solid #EEE; commented out 10/18*/
 	border-top: 5px solid #EEE;
 	border-bottom: 5px solid #EEE;
 }
@@ -136,8 +137,9 @@ header nav ul li a {
 .section-two,
 .section-three {
 	box-sizing: border-box;
-	/*float: left;*/
-	/*padding: 0 40px; original padding*/
+	/*border-top: 5px solid #EEE; 10/19 commented out*/
+	/*float: left; original code*/
+	/*padding: 0 40px; original code*/
 }
 
 .section-one {
@@ -148,15 +150,14 @@ header nav ul li a {
 .section-two {
 	/*width: 42%;*/
 	width: 100%;
-	/*border-left: 5px solid #EEE;
-	border-right: 5px solid #EEE;*/
 	border-top: 5px solid #EEE;
+	border-bottom: 5px solid #EEE;
 }
 
 .section-three {
 	/*width: 29%;*/
 	width: 100%;
-	border-top: 5px solid #EEE;
+	/*border-top: 5px solid #EEE; commented out 10/18*/
 }
 
 .bottom-section h3 {
@@ -164,7 +165,7 @@ header nav ul li a {
 }
 
 .menu-list {
-	padding-left: 0; 
+	padding-left: 0;
 	list-style: none;
 }
 
@@ -190,4 +191,73 @@ footer span {
 	color: #45610E;
 	/*font-size: 14px;*/
 	font-size: 0.875rem;
+}
+
+
+/******* MEDIA STYLES ********/
+
+@media all and (min-width: 768px) {
+
+	/* Tablet Styles here */
+	/*** BOTTOM SECTION ***/
+	.bottom-section .content-wrapper {
+		justify-content: space-evenly;
+	}
+
+	.section-one {
+		flex-basis: 26%;
+	}
+
+	.section-two {
+		flex-basis: 40%;
+		padding: 0 30px;
+		border-left: 5px solid #EEE;
+		border-right: 5px solid #EEE;
+		border-top: none;
+		border-bottom: none;
+		/*border-top and border-bottom are needed 
+		because there shouldn't be duplicate code from the mobile.
+		In our mobile, we have a border-top and border-bottom and thus, 
+		without cancelling it, it carries over. Currently, because we're mobile-first, it applies
+		to that size of screen and any larger, so that's why we cancel it out and it's 
+		why it was carrying over to look like double lines at the top and bottom of .section-two.*/
+	}
+
+	.section-three {
+		flex-basis: 26%;
+	}
+
+}
+
+@media all and (min-width: 1200px) {
+
+	/*** Desktop Styles here ***/
+	body {
+		font-size: 1em;
+	}
+
+	header .content-wrapper {
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px 0;
+	}
+
+	header h1 {
+		width: 30%;
+		padding: 0;
+		border-bottom: none;
+		text-align: left;
+	}
+
+
+	header nav {
+		width: 21%;
+	}
+
+
+	header nav ul {
+		display: flex;
+		justify-content: space-between;
+	}
+
 }
